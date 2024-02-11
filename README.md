@@ -6,9 +6,7 @@ Familiarising yourself with the drupal cms
 
 - [Installation](#installation)
 - [Utilisation](#utilisation)
-- [Contribution](#contribution)
-- [Licence](#licence)
-- [Contact](#contact)
+- [References](#References)
 
 ## Prerequisites
 
