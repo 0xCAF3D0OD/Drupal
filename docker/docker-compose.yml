@@ -12,6 +12,11 @@ services:
     image: drupal:latest
     ports:
       -  8080:80
+    volumes:
+      - ../recommended-project/web:/var/www/html
+      - ../recommended-project/vendor:/opt/drupal/vendor
+      - ../recommended-project/composer.json:/opt/drupal/composer.json
+      - ../recommended-project/composer.lock:/opt/drupal/composer.lock
     links:
       - db
     environment:
