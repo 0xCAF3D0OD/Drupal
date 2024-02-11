@@ -1,8 +1,17 @@
+# Specifies the version of the Docker Compose file format. which features and syntax are available in the file
 version: '3.1'
 
+# Defines the services that make up your application.
+# - Each service runs in a separate container.
+# - Represents a component of your overall application.
 services:
   db:
+    # Indicates the Docker image to be used for the db service. MySQL version 5.7
     image: mysql:5.7
+    # A list of environment variables to set inside the container for the db service.
+    # These variables are used by
+    # the entrypoint script,
+    # Application running inside the container
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
@@ -10,6 +19,9 @@ services:
 
   drupal:
     image: drupal:latest
+    # Maps ports between the host and the container.
+    # In this case, port 8080 on the host is mapped to port 80 on the container,
+    # allowing you to access the Drupal application on port 8080
     ports:
       -  8080:80
     volumes:
@@ -17,6 +29,7 @@ services:
       - ../recommended-project/vendor:/opt/drupal/vendor
       - ../recommended-project/composer.json:/opt/drupal/composer.json
       - ../recommended-project/composer.lock:/opt/drupal/composer.lock
+    #  Creates a link between the drupal service and the db service, allowing them to communicate with each other
     links:
       - db
     environment:
