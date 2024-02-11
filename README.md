@@ -10,7 +10,7 @@ Familiarising yourself with the drupal cms
 
 ## Prerequisites
 
-Before proceeding with the Drupal installation, ensure the following prerequisites are met:
+**Before proceeding with the Drupal installation**, ensure the following prerequisites are met:
 
 1. **Docker Installed**: Docker must be installed on your system. Check if Docker is installed with command in your terminal: 
 `bash docker --version`
@@ -43,25 +43,32 @@ the Drupal setup process.
 2. Lauch the composer command, for creating a new project: `composer create-project drupal/recommended-project:8.9.5 my-drupal-project`,
    To specify a version of Drupal, replace 8.9.5 with the version you want.
 
-    The command does the following:
+* **The command does the following**:
     
-   * It tells Composer to create a new project.
-   * `drupal/recommended-project` package, it's recommended by Drupal for starting new projects.
-   * `8.9.5` version of the template is used, is set up with the features and modules compatible with Drupal version 8.9.5.
-   * `my-drupal-project` is The new project name.
-   * `drupal/recommended-project package` package automatically handle the installation of all dependencies, such as:
-     * **Drupal core**, 
-     * **contributed modules**, 
-     * **libraries**, 
-   * the newly created directory named after the project alias (my-drupal-project)
+   > It tells Composer to **create a new project**.
     
-   for more information, check **[drupalize.me](https://drupalize.me/tutorial/use-composer-your-drupal-project)**
+   >`drupal/recommended-project` package, it's recommended by Drupal for starting new projects.
+    
+   >`8.9.5` version of the template is used, is set up with the features and modules compatible with Drupal version 8.9.5.
+    
+   >`my-drupal-project` is The new project name.
+    
+   >`drupal/recommended-project package` package automatically handle the installation of all dependencies, such as:
+   >  * **Drupal core**, 
+   >  * **contributed modules**, 
+   >  * **libraries**, 
+    
+   >the newly created directory named after the project alias (my-drupal-project)
+    
+  **for more information**, check **[drupalize.me](https://drupalize.me/tutorial/use-composer-your-drupal-project)**
 
 
 3. **Create a `.env` file** in the project directory and define the environment variables for your database and Drupal installation:
 
-[<img src="ressources/env.png" width="300">](documentation/repo.png)
-
+   >This is what it should look like:
+   >
+   >[<img src="ressources/env.png" width="300">](documentation/repo.png)
+   
 
 4. **Create a `docker-compose.yml` file** in the project directory, 
 you can check how to do it following my docker-compose in the `docker` folder
